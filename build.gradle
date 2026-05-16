@@ -84,29 +84,17 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
+    mavenCentral()
     maven {
-        name 'Jared\'s Maven' // JEI
-        url 'https://maven.blamejared.com/'
+        name = "MinecraftRepo"
+        url = "https://libraries.minecraft.net/"
     }
     maven {
-        name 'tterrag\'s Maven' // CTM
-        url 'https://maven.tterrag.com/'
+        name = "ForgeRepo"
+        url = "https://maven.minecraftforge.net/"
     }
-    maven {
-        name 'theillusivec4\'s Maven' // Curios
-        url 'https://maven.theillusivec4.top/'
-    }
-    maven {
-        name 'Tama\'s Maven' // Cross-Dim Commands
-        url "https://maven.tamaized.com/releases"
-    }
-    maven {
-        name 'Curseforge Maven' // Jade
-        url "https://www.cursemaven.com"
-        content {
-            includeGroup "curse.maven"
-        }
-    }
+    // 如果项目需要 SpongeMixins 等，可以添加：
+    // maven { url = "https://repo.spongepowered.org/maven/" }
 }
 
 dependencies {
